@@ -1,0 +1,27 @@
+{
+  "name": "cosmastech/psr-logger-spy",
+  "authors": [
+    {
+      "name": "Luke Kuzmish",
+      "email": "luke@kuzmish.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "psr/log": "^2.0 || ^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cosmastech\\PsrLoggerSpy\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Cosmastech\\PsrLoggerSpy\\Tests\\": "tests"
+    }
+  },
+  "provide": {
+    "psr/log-implementation": "3.0.0"
+  }
+}
