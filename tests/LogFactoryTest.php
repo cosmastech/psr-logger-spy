@@ -15,6 +15,7 @@ use Cosmastech\PsrLoggerSpy\ValueObjects\WarningLog;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LogLevel;
+use Stringable;
 
 class LogFactoryTest extends TestCase
 {
@@ -158,4 +159,42 @@ class LogFactoryTest extends TestCase
         self::assertEquals(LogLevelEnum::EMERGENCY, $log->getLevel());
     }
 
+    #[Test]
+    public function createLog_stringMessage_nonEmptyContext_createsLogWithMessageAndContext()
+    {
+        // Given
+        $message = "here is my message";
+        $context = ["hello" => "world"];
+
+        // And
+        $factory = new LogFactory();
+
+        // When
+        $log = $factory->createLog("debug", $message, $context);
+
+        // Then
+        self::assertEquals($message, $log->message);
+        self::assertEqualsCanonicalizing($context, $log->context);
+    }
+
+    #[Test]
+    public function createLog_stringableMessage_createsLogWithStringableMessage() {
+        // Given
+        $someStringable = new class() implements Stringable {
+
+            public function __toString()
+            {
+                return "the string inside of my class";
+            }
+        };
+
+        // And
+        $logFactory = new LogFactory();
+
+        // When
+        $log = $logFactory->createLog("warning", $someStringable);
+
+        // Then
+        self::assertSame($someStringable, $log->message);
+    }
 }

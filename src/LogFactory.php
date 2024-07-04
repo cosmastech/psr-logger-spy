@@ -19,7 +19,7 @@ class LogFactory implements LogFactoryInterface
     /**
      * @throws NoMatchingLogTypeException
      */
-    public function createLog($level, Stringable|string $message, array $context): AbstractLog
+    public function createLog($level, Stringable|string $message, array $context = []): AbstractLog
     {
         $logLevelEnumCase = is_string($level) ? $this->handleString($level) : null;
 
