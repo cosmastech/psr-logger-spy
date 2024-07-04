@@ -2,9 +2,14 @@
 
 namespace Cosmastech\PsrLoggerSpy;
 
+use Cosmastech\PsrLoggerSpy\Exceptions\NoMatchingLogTypeException;
+use Cosmastech\PsrLoggerSpy\ValueObjects\AbstractLog;
 use Stringable;
 
-interface LogFactory
+interface LogFactoryInterface
 {
-    public function createLog($level, Stringable|string $message, array $context);
+    /**
+     * @throws NoMatchingLogTypeException
+     */
+    public function createLog($level, Stringable|string $message, array $context): AbstractLog;
 }

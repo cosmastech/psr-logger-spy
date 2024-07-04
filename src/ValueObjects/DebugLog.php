@@ -4,7 +4,7 @@ namespace Cosmastech\PsrLoggerSpy\ValueObjects;
 
 use Cosmastech\PsrLoggerSpy\LogLevelEnum;
 
-class DebugLogObject extends AbstractLogObject
+class DebugLog extends AbstractLog
 {
     public function getLevel(): LogLevelEnum
     {

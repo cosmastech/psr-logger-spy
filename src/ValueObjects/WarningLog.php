@@ -2,7 +2,12 @@
 
 namespace Cosmastech\PsrLoggerSpy\ValueObjects;
 
-class WarningLog
-{
+use Cosmastech\PsrLoggerSpy\LogLevelEnum;
 
+class WarningLog extends AbstractLog
+{
+    public function getLevel(): LogLevelEnum
+    {
+        // TODO: Implement getLevel() method.
+    }
 }
