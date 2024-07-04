@@ -1,0 +1,35 @@
+{
+  "name": "cosmastech/psr-logger-spy",
+  "authors": [
+    {
+      "name": "Luke Kuzmish",
+      "email": "luke@kuzmish.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "psr/log": "^2.0 || ^3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.2.5",
+    "friendsofphp/php-cs-fixer": "^3.59"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cosmastech\\PsrLoggerSpy\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Cosmastech\\PsrLoggerSpy\\Tests\\": "tests"
+    }
+  },
+  "provide": {
+    "psr/log-implementation": "3.0.0"
+  },
+  "scripts": {
+    "test": "phpunit tests",
+    "php-cs-fixer": "./vendor/bin/php-cs-fixer fix ./"
+  }
+}
