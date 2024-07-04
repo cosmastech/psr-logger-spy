@@ -10,18 +10,10 @@ use Stringable;
 
 abstract class AbstractLog implements ArrayAccess
 {
-    public function __construct(private readonly Stringable|string $message, private readonly array $context = [])
-    {
-    }
-
-    public function getMessage(): Stringable|string
-    {
-        return $this->message;
-    }
-
-    public function getContext(): array
-    {
-        return $this->context;
+    public function __construct(
+        public readonly Stringable|string $message,
+        public readonly array $context = []
+    ) {
     }
 
     abstract public function getLevel(): LogLevelEnum;
