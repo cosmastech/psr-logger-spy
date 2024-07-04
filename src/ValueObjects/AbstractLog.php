@@ -18,7 +18,6 @@ abstract class AbstractLog implements ArrayAccess
 
     abstract public function getLevel(): LogLevelEnum;
 
-
     public function offsetExists(mixed $offset): bool
     {
         return in_array($offset, ['message', 'context']);
