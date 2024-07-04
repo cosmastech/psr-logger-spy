@@ -6,8 +6,10 @@ use Cosmastech\PsrLoggerSpy\LogLevelEnum;
 
 class EmergencyLog extends AbstractLog
 {
+    private const LOG_LEVEL = LogLevelEnum::EMERGENCY;
+
     public function getLevel(): LogLevelEnum
     {
-        // TODO: Implement getLevel() method.
+        return self::LOG_LEVEL;
     }
 }
