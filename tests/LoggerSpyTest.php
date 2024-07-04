@@ -18,6 +18,7 @@ use PHPUnit\Framework\TestCase;
 class LoggerSpyTest extends TestCase
 {
     private LoggerSpy $loggerSpy;
+
     public function setUp(): void
     {
         parent::setUp();
@@ -166,6 +167,4 @@ class LoggerSpyTest extends TestCase
         $logs = $this->loggerSpy->getLogs();
         self::assertCount(0, $logs);
     }
-
-
 }
