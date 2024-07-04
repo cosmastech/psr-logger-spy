@@ -180,10 +180,10 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_stringableMessage_createsLogWithStringableMessage() {
+    public function createLog_stringableMessage_createsLogWithStringableMessage()
+    {
         // Given
-        $someStringable = new class() implements Stringable {
-
+        $someStringable = new class () implements Stringable {
             public function __toString()
             {
                 return "the string inside of my class";
@@ -201,7 +201,8 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_invalidLevel_throwsException(){
+    public function createLog_invalidLevel_throwsException()
+    {
         // Given
         $logFactory = new LogFactory();
 
