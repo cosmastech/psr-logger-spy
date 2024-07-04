@@ -12,7 +12,7 @@ class LoggerSpy implements LoggerInterface
 {
     use LoggerTrait;
 
-    /** @var array<int, AbstractLog>  */
+    /** @var array<int, AbstractLog> */
     private array $logs = [];
 
     public function __construct(private readonly LogFactoryInterface $logFactory)
