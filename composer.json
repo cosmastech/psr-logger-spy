@@ -32,6 +32,7 @@
   },
   "scripts": {
     "test": "phpunit tests",
-    "php-cs-fixer": "./vendor/bin/php-cs-fixer fix ./"
+    "php-cs-fixer": "./vendor/bin/php-cs-fixer fix ./",
+    "php-cs-fixer-check": "./vendor/bin/php-cs-fixer check ./"
   }
 }
