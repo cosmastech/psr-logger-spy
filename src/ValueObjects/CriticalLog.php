@@ -6,10 +6,6 @@ use Cosmastech\PsrLoggerSpy\LogLevelEnum;
 
 class CriticalLog extends AbstractLog
 {
+    use GetLevelTrait;
     private const LOG_LEVEL = LogLevelEnum::CRITICAL;
-
-    public function getLevel(): LogLevelEnum
-    {
-        return self::LOG_LEVEL;
-    }
 }

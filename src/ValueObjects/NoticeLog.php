@@ -6,10 +6,7 @@ use Cosmastech\PsrLoggerSpy\LogLevelEnum;
 
 class NoticeLog extends AbstractLog
 {
-    private const LOG_LEVEL = LogLevelEnum::NOTICE;
+    use GetLevelTrait;
 
-    public function getLevel(): LogLevelEnum
-    {
-        return self::LOG_LEVEL;
-    }
+    private const LOG_LEVEL = LogLevelEnum::NOTICE;
 }
