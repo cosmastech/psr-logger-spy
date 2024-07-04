@@ -1,5 +1,7 @@
 {
   "name": "cosmastech/psr-logger-spy",
+  "description": "A simple spy for PSR logging.",
+  "license": "WTFPL",
   "authors": [
     {
       "name": "Luke Kuzmish",
