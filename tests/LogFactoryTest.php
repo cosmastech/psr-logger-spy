@@ -2,6 +2,7 @@
 
 namespace Cosmastech\PsrLoggerSpy\Tests;
 
+use Cosmastech\PsrLoggerSpy\Exceptions\NoMatchingLogTypeException;
 use Cosmastech\PsrLoggerSpy\LogFactory;
 use Cosmastech\PsrLoggerSpy\LogLevelEnum;
 use Cosmastech\PsrLoggerSpy\ValueObjects\AlertLog;
@@ -16,6 +17,7 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LogLevel;
 use Stringable;
+use Throwable;
 
 class LogFactoryTest extends TestCase
 {
@@ -196,5 +198,24 @@ class LogFactoryTest extends TestCase
 
         // Then
         self::assertSame($someStringable, $log->message);
+    }
+
+    #[Test]
+    public function createLog_invalidLevel_throwsException(){
+        // Given
+        $logFactory = new LogFactory();
+
+        // And
+        $exception = null;
+
+        // When
+        try {
+            $logFactory->createLog("this will fail", "");
+        } catch (Throwable $t) {
+            $exception = $t;
+        }
+
+        // Then
+        self::assertInstanceOf(NoMatchingLogTypeException::class, $exception);
     }
 }
