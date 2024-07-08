@@ -22,7 +22,7 @@ use Throwable;
 class LogFactoryTest extends TestCase
 {
     #[Test]
-    public function createLog_debugString_returnsDebugLog()
+    public function createLog_debugString_returnsDebugLog(): void
     {
         // Given
         $logLevel = LogLevel::DEBUG;
@@ -39,7 +39,7 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_infoString_returnsInfoLog()
+    public function createLog_infoString_returnsInfoLog(): void
     {
         // Given
         $logLevel = LogLevel::INFO;
@@ -56,7 +56,7 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_noticeString_returnsNoticeLog()
+    public function createLog_noticeString_returnsNoticeLog(): void
     {
         // Given
         $logLevel = LogLevel::NOTICE;
@@ -73,7 +73,7 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_warningString_returnsWarningLog()
+    public function createLog_warningString_returnsWarningLog(): void
     {
         // Given
         $logLevel = LogLevel::WARNING;
@@ -90,7 +90,7 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_errorString_returnsErrorLog()
+    public function createLog_errorString_returnsErrorLog(): void
     {
         // Given
         $logLevel = LogLevel::ERROR;
@@ -107,7 +107,7 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_criticalString_returnsCriticalLog()
+    public function createLog_criticalString_returnsCriticalLog(): void
     {
         // Given
         $logLevel = LogLevel::CRITICAL;
@@ -128,7 +128,7 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_alertString_returnsAlertLog()
+    public function createLog_alertString_returnsAlertLog(): void
     {
         // Given
         $logLevel = LogLevel::ALERT;
@@ -145,7 +145,7 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_emergencyString_returnsEmergencyLog()
+    public function createLog_emergencyString_returnsEmergencyLog(): void
     {
         // Given
         $logLevel = LogLevel::EMERGENCY;
@@ -162,7 +162,7 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_stringMessage_nonEmptyContext_createsLogWithMessageAndContext()
+    public function createLog_stringMessage_nonEmptyContext_createsLogWithMessageAndContext(): void
     {
         // Given
         $message = "here is my message";
@@ -180,7 +180,7 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_stringableMessage_createsLogWithStringableMessage()
+    public function createLog_stringableMessage_createsLogWithStringableMessage(): void
     {
         // Given
         $someStringable = new class () implements Stringable {
@@ -201,7 +201,7 @@ class LogFactoryTest extends TestCase
     }
 
     #[Test]
-    public function createLog_invalidLevel_throwsException()
+    public function createLog_invalidLevel_throwsException(): void
     {
         // Given
         $logFactory = new LogFactory();

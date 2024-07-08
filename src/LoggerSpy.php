@@ -19,6 +19,9 @@ class LoggerSpy implements LoggerInterface
     {
     }
 
+    /**
+     * @return array<int, AbstractLog>
+     */
     public function getLogs(): array
     {
         return $this->logs;
@@ -30,7 +33,12 @@ class LoggerSpy implements LoggerInterface
     }
 
     /**
-     * @inheritDoc
+     * @param $level
+     * @param  Stringable|string  $message
+     * @param  array<mixed, mixed>  $context
+     *
+     * @return void
+     *
      * @throws NoMatchingLogTypeException
      */
     public function log($level, Stringable|string $message, array $context = []): void

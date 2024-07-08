@@ -27,7 +27,7 @@ class LoggerSpyTest extends TestCase
     }
 
     #[Test]
-    public function getLogs_noLogs_returnsEmptyArray()
+    public function getLogs_noLogs_returnsEmptyArray(): void
     {
         // Given LoggerSpy
 
@@ -40,7 +40,7 @@ class LoggerSpyTest extends TestCase
     }
 
     #[Test]
-    public function emergency_writesAnEmergencyLog()
+    public function emergency_writesAnEmergencyLog(): void
     {
         // Given LoggerSpy
 
@@ -54,7 +54,7 @@ class LoggerSpyTest extends TestCase
     }
 
     #[Test]
-    public function alert_writesAnAlertLog()
+    public function alert_writesAnAlertLog(): void
     {
         // Given LoggerSpy
 
@@ -68,7 +68,7 @@ class LoggerSpyTest extends TestCase
     }
 
     #[Test]
-    public function critical_writesACriticalLog()
+    public function critical_writesACriticalLog(): void
     {
         // Given LoggerSpy
 
@@ -82,7 +82,7 @@ class LoggerSpyTest extends TestCase
     }
 
     #[Test]
-    public function error_writesAnErrorLog()
+    public function error_writesAnErrorLog(): void
     {
         // Given LoggerSpy
 
@@ -96,7 +96,7 @@ class LoggerSpyTest extends TestCase
     }
 
     #[Test]
-    public function warning_writesAWarningLog()
+    public function warning_writesAWarningLog(): void
     {
         // Given LoggerSpy
 
@@ -110,7 +110,7 @@ class LoggerSpyTest extends TestCase
     }
 
     #[Test]
-    public function notice_writesANoticeLog()
+    public function notice_writesANoticeLog(): void
     {
         // Given LoggerSpy
 
@@ -124,7 +124,7 @@ class LoggerSpyTest extends TestCase
     }
 
     #[Test]
-    public function info_writesAnInfoLog()
+    public function info_writesAnInfoLog(): void
     {
         // Given LoggerSpy
 
@@ -138,7 +138,7 @@ class LoggerSpyTest extends TestCase
     }
 
     #[Test]
-    public function debug_writesADebugLog()
+    public function debug_writesADebugLog(): void
     {
         // Given LoggerSpy
 
@@ -152,7 +152,7 @@ class LoggerSpyTest extends TestCase
     }
 
     #[Test]
-    public function clearLogs_logsAreEmpty()
+    public function clearLogs_logsAreEmpty(): void
     {
         // Given
         $this->loggerSpy->info("my message");

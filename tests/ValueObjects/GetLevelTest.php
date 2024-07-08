@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 class GetLevelTest extends TestCase
 {
     #[Test]
-    public function debugLog_logLevelIsDebug()
+    public function debugLog_logLevelIsDebug(): void
     {
         // Given
         $log = new DebugLog("irrelevant", []);
@@ -30,7 +30,7 @@ class GetLevelTest extends TestCase
     }
 
     #[Test]
-    public function infoLog_logLevelIsInfo()
+    public function infoLog_logLevelIsInfo(): void
     {
         // Given
         $log = new InfoLog("irrelevant", []);
@@ -43,7 +43,7 @@ class GetLevelTest extends TestCase
     }
 
     #[Test]
-    public function noticeLog_logLevelIsNotice()
+    public function noticeLog_logLevelIsNotice(): void
     {
         // Given
         $log = new NoticeLog("irrelevant", []);
@@ -56,7 +56,7 @@ class GetLevelTest extends TestCase
     }
 
     #[Test]
-    public function warningLog_logLevelIsWarning()
+    public function warningLog_logLevelIsWarning(): void
     {
         // Given
         $log = new WarningLog("irrelevant", []);
@@ -69,7 +69,7 @@ class GetLevelTest extends TestCase
     }
 
     #[Test]
-    public function errorLog_logLevelIsError()
+    public function errorLog_logLevelIsError(): void
     {
         // Given
         $log = new ErrorLog("irrelevant", []);
@@ -82,7 +82,7 @@ class GetLevelTest extends TestCase
     }
 
     #[Test]
-    public function criticalLog_logLevelIsCritical()
+    public function criticalLog_logLevelIsCritical(): void
     {
         // Given
         $log = new CriticalLog("irrelevant", []);
@@ -95,7 +95,7 @@ class GetLevelTest extends TestCase
     }
 
     #[Test]
-    public function alertLog_logLevelIsAlert()
+    public function alertLog_logLevelIsAlert(): void
     {
         // Given
         $log = new AlertLog("irrelevant", []);
@@ -108,7 +108,7 @@ class GetLevelTest extends TestCase
     }
 
     #[Test]
-    public function emergencyLog_logLevelIsEmergency()
+    public function emergencyLog_logLevelIsEmergency(): void
     {
         // Given
         $log = new EmergencyLog("irrelevant", []);
@@ -119,5 +119,4 @@ class GetLevelTest extends TestCase
         // Then
         self::assertEquals(LogLevelEnum::EMERGENCY, $logLevel);
     }
-
 }
