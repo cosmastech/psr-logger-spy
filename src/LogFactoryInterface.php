@@ -9,6 +9,11 @@ use Stringable;
 interface LogFactoryInterface
 {
     /**
+     * @param  mixed  $level
+     * @param  Stringable|string  $message
+     * @param  array<mixed, mixed>  $context
+     * @return AbstractLog
+     *
      * @throws NoMatchingLogTypeException
      */
     public function createLog($level, Stringable|string $message, array $context): AbstractLog;

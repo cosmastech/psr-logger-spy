@@ -4,10 +4,10 @@ namespace Cosmastech\PsrLoggerSpy\Exceptions;
 
 use Exception;
 
-class NoMatchingLogTypeException extends Exception
+final class NoMatchingLogTypeException extends Exception
 {
-    public static function fromLogLevel($logLevel)
+    public static function fromLogLevel(mixed $logLevel): static
     {
-        return new static("Could not find a matching LogLevelEnum case for {$logLevel}");
+        return new NoMatchingLogTypeException("Could not find a matching LogLevelEnum case for {$logLevel}");
     }
 }

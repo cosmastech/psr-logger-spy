@@ -8,8 +8,15 @@ use Cosmastech\PsrLoggerSpy\LogLevelEnum;
 use OutOfBoundsException;
 use Stringable;
 
+/**
+ * @implements ArrayAccess<string, mixed>
+ */
 abstract class AbstractLog implements ArrayAccess
 {
+    /**
+     * @param  Stringable|string  $message
+     * @param  array<mixed, mixed>  $context
+     */
     public function __construct(
         public readonly Stringable|string $message,
         public readonly array $context = []
